@@ -1,0 +1,9 @@
+footer.footer
+  .container
+    nav.level
+      p.level-item.has-text-centered &copy; #{Time.current.year} 8-bit Bunny
+      p.level-item.has-text-centered = link_to_policy(policy(:page).license?, 'MIT License', license_path)
+      p.level-item.has-text-centered
+        = link_to(Settings.github.url) do
+          => icon('fab fa-github')
+          | ramaboo/bunny

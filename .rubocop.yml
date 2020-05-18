@@ -1,0 +1,18 @@
+AllCops:
+  Exclude:
+    - "db/migrate/**/*"
+    - "db/schema.rb"
+    - "node_modules/**/*"
+  TargetRubyVersion: 2.7
+
+Documentation:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 240
+
+Metrics/AbcSize:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

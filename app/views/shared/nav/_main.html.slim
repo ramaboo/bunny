@@ -1,0 +1,28 @@
+nav.navbar
+  .navbar-brand
+    - if policy(:page).home?
+      = link_to image_pack_tag('bunny.svg'), root_path, class: 'navbar-item'
+    a.navbar-burger
+      span
+      span
+      span
+  .navbar-menu
+    - if current_user
+      .navbar-start
+        - if policy(:styleguide).show?
+          = link_to 'Styleguide', styleguide_path, class: 'navbar-item'
+        - if policy(:page).system?
+          = link_to 'System Information', system_path, class: 'navbar-item'
+      .navbar-end
+        - if policy(current_user).show?
+          = link_to 'Profile', user_path(current_user), class: 'navbar-item'
+
+        = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'navbar-item'
+    - else
+      .navbar-start
+
+      .navbar-end
+        .navbar-item
+          .buttons
+            = link_to 'Sign up', new_user_registration_path, class: 'button is-primary'
+            = link_to 'Sign In', new_user_session_path, class: 'button is-secondary'

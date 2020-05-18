@@ -1,0 +1,12 @@
+section.flash {
+  padding: 0;
+
+ .container {
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+
+    &:empty {
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.card
+  .card-image
+
+  .card-content
+    h2.title = @user.name
+    .content
+      p  = link_to 'New', new_user_path, class: 'button'
+      p  = link_to 'Edit', edit_user_path(@user), class: 'button'
+
+      p = mail_to(@user.email)
+      p = @user.date_of_birth
+      p
+        b> Roles:
+        = @user.roles.join(', ')

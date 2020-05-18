@@ -1,0 +1,23 @@
+  section.section.flash
+    .container.is-fluid
+      - if flash[:alert]
+        article.message.is-danger
+          .message-header
+            p Danger
+            button.delete
+          .message-body
+            = sanitize(flash[:alert])
+      - if flash[:success]
+        article.message.is-success
+          .message-header
+            p Success
+            button.delete
+          .message-body
+            = sanitize(flash[:success])
+      - if flash[:notice]
+        article.message.is-info
+          .message-header
+            p Info
+            button.delete
+          .message-body
+            = sanitize(flash[:notice])

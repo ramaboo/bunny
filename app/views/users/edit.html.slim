@@ -1,0 +1,11 @@
+- page_title "Edit #{@user}"
+.ui.two.column.grid.stackable
+  .column
+    .ui.top.attached.header Edit User
+    .ui.raised.padded.attached.segment
+      = simple_form_for(@user) do |f|
+        = f.input :email, required: true, autofocus: true
+        = f.input :first_name
+        = f.input :last_name
+        = f.input :date_of_birth
+        = f.button :submit, 'Update'

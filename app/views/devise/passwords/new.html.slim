@@ -1,0 +1,14 @@
+- page_title 'Forgot Password'
+
+.ui.two.column.centered.grid.stackable
+  .column
+    .ui.top.attached.header Forgot Password
+    .ui.raised.padded.attached.segment
+      = render 'devise/shared/error_messages', resource: resource
+      = simple_form_for(resource, as: resource_name, url: password_path(resource_name), method: :post) do |f|
+        = f.input :email, required: true, autofocus: true
+        = f.button :submit, 'Send'
+    .ui.raised.padded.bottom.attached.segment.secondary
+      .ui.list
+        = link_to 'Sign in', new_session_path(resource_name), class: 'item'
+        = link_to 'Sign up', new_registration_path(resource_name), class: 'item'

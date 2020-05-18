@@ -1,0 +1,7 @@
+- if resource.errors.any?
+  article.message.is-danger
+    .message-header
+      p = pluralize(resource.errors.count, 'Error')
+    .message-body
+      - resource.errors.full_messages.each do |message|
+        p = "#{message}."

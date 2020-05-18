@@ -1,0 +1,23 @@
+defaults: &defaults
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  pool: 5
+  username:
+  password:
+
+development:
+  <<: *defaults
+  database: bunny_development
+
+test:
+  <<: *defaults
+  database: bunny_test
+
+staging:
+  url: <%= ENV['DATABASE_URL'] %>
+  pool: <%= ENV['DB_POOL'] %>
+
+production:
+  url: <%= ENV['DATABASE_URL'] %>
+  pool: <%= ENV['DB_POOL'] %>

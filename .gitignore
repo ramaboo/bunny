@@ -1,0 +1,42 @@
+# Bundler
+/.bundle
+
+# Environment
+.env
+.env.local
+
+# Debug
+.byebug_history
+
+# JavaScript
+/public/assets
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+
+# Keys
+/config/master.key
+
+# Log
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Mac
+.DS_Store
+
+# Storage
+/storage/*
+!/storage/.keep
+
+# User
+ngrok
+TODO
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml

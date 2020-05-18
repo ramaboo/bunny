@@ -1,0 +1,16 @@
+- page_title 'Sign In'
+.ui.two.column.centered.grid.stackable
+  .column
+    .ui.top.attached.header Sign In
+    .ui.raised.padded.attached.segment
+
+      = render 'devise/shared/error_messages', resource: resource
+      = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        = f.input :email, required: true, autofocus: true, input_html: { autocomplete: 'email' }
+        = f.input :password, required: true, input_html: { autocomplete: 'current-password' }
+        = f.input :remember_me, as: :boolean
+        = f.button :submit, 'Sign In'
+
+
+        = link_to 'Forgot password', new_password_path(resource_name), class: 'item'
+        = link_to 'Sign up', new_registration_path(resource_name), class: 'item'

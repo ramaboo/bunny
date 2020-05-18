@@ -1,0 +1,13 @@
+- page_title 'Users'
+.ui.header Users
+
+table.ui.striped.table.blue
+  thead
+    tr
+      th ID
+      th Email
+  tbody
+    - @users.each do |user|
+      tr
+        td = link_to_policy(policy(user).show?, user.id, user)
+        td = link_to_policy(policy(user).show?, user.email, user)

@@ -1,0 +1,27 @@
+- page_title('System Information')
+
+section.hero.is-info
+  .hero-body
+    .container
+      h1.title System Information
+      h2.subtitle 8-bit Bunny is powered by <b>open source</b> technology
+section
+  .container
+    .card
+      .card-content
+        .content
+          p
+            b> Hostname:
+            = Socket.gethostname
+          p
+            b> Ruby:
+            = RUBY_VERSION
+          p
+            b> Rails:
+            = Rails.version
+          p
+            b> Environment:
+            = Rails.env
+          p
+            b> Git:
+            = git_commit_hash
